@@ -15,7 +15,7 @@ export default function LoginScreen() {
           placeholder="Email"
         />
         <TextInput className=" block w-[338px]  mt-16 mx-8 px-3 py-3 bg-white border border-slate-300 rounded-md text-m shadow-sm placeholder:bold " placeholder="Password" />
-        <TouchableOpacity className="bg-[#FF2625] mx-20 p-[12px] mt-20 rounded-xl" onPress={() => Alert.alert("Simple Button pressed")}>
+        <TouchableOpacity className="bg-[#FF2625] mx-20 p-[12px] mt-20 rounded-xl" onPress={() => navigation.navigate("home")}>
           <Text className="text-black ml-20 text-2xl font-extrabold">Login</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("signup")}>
