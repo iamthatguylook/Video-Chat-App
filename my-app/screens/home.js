@@ -34,7 +34,6 @@ export default function HomeScreen() {
 	return (
 		<SafeAreaView style={SafeAreaViewAndroid.AndroidSafeArea}>
 			<View className="mt-80 p-8">
-				{renderGenderLabel}
 				<Dropdown
 					style={[styles.genderDropdown, isGenderFocus && { borderColor: "white", borderWidth: 1 }]}
 					placeholderStyle={styles.placeholderStyle}
@@ -56,7 +55,7 @@ export default function HomeScreen() {
 						setIsGenderFocus(false);
 					}}
 				/>
-				{renderCountryLabel}
+
 				<Dropdown
 					style={[styles.countryDropdown, "mt-20", isCountryFocus && { borderColor: "white", borderWidth: 1 }]}
 					placeholderStyle={styles.placeholderStyle}
@@ -78,7 +77,7 @@ export default function HomeScreen() {
 						setIsCountryFocus(false);
 					}}
 				/>
-				<TouchableOpacity className="bg-[#FF4550] mx-20 p-[12px] mt-24 rounded-xl" onPress={() => navigation.navigate("login")}>
+				<TouchableOpacity className="bg-[#FF4550] mx-20 p-[12px] mt-24 rounded-xl" onPress={() => navigation.navigate("loadingScreen")}>
 					<Text className="text-black ml-4 text-xl font-extrabold">Find Someone</Text>
 				</TouchableOpacity>
 			</View>
