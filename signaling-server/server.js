@@ -35,6 +35,10 @@ io.on("connection", (socket) => {
 			socket.leave(room);
 			console.log(`User left room: ${room} ${socket.id}`);
 		});
+
+		socket.on("offer", (offer) => {
+			console.log(offer);
+		});
 	});
 
 	// Handle SDP offer from client
