@@ -37,8 +37,20 @@ io.on("connection", (socket) => {
 		});
 
 		socket.on("offer", (offer) => {
-			console.log(offer);
+			console.log('server offer',offer);
 		});
+
+		socket.on('send-icecandidate', (icecandidate, MemberId) => {
+			io.to(MemberId).emit("recieve-icecandidate",icecandidate)
+			
+		})
+		socket.on('webrtc-offer', (offer,recieverId) => {
+			io.to(recieverId).emit("recieve-webrtcoffer",offer)
+		})
+		socket.on('webrtc-answer', (answer,recieverId) => {
+			io.to(recieverId).emit("recieve-webrtcanswer",answer)
+		})
+
 	});
 
 	// Handle SDP offer from client
