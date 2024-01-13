@@ -24,6 +24,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-tailwindcss": "^1.1.11",
     "react-native-vector-icons": "^10.0.2",
+    "socket.io-client": "^4.7.3",
     "tailwindcss-react-native": "^1.7.10",
     "yarn": "^1.22.21"
   },

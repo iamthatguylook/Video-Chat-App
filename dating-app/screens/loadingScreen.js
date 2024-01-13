@@ -2,11 +2,13 @@ import { Camera, CameraType } from "expo-camera";
 import { useState, Component } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View, ActivityIndicator } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import socket from "../socket";
 
 export default function App() {
 	const [type, setType] = useState(CameraType.back);
 	const [permission, requestPermission] = Camera.useCameraPermissions();
 	const [isLoading, setIsLoading] = useState(true);
+
 	if (!permission) {
 		// Camera permissions are still loading
 		return <View />;

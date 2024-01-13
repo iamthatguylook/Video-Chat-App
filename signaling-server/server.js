@@ -29,6 +29,7 @@ io.on("connection", (socket) => {
 		let clients = io.sockets.adapter.rooms.get(room);
 		clients = JSON.parse(JSON.stringify(Array.from(clients)));
 		// Send the list of users in the room to the new user
+		console.log(clients);
 		io.to(room).emit("current-users", clients);
 
 		socket.on("leave-room", (room) => {
@@ -37,20 +38,18 @@ io.on("connection", (socket) => {
 		});
 
 		socket.on("offer", (offer) => {
-			console.log('server offer',offer);
+			console.log("server offer", offer);
 		});
 
-		socket.on('send-icecandidate', (icecandidate, MemberId) => {
-			io.to(MemberId).emit("recieve-icecandidate",icecandidate)
-			
-		})
-		socket.on('webrtc-offer', (offer,recieverId) => {
-			io.to(recieverId).emit("recieve-webrtcoffer",offer)
-		})
-		socket.on('webrtc-answer', (answer,recieverId) => {
-			io.to(recieverId).emit("recieve-webrtcanswer",answer)
-		})
-
+		socket.on("send-icecandidate", (icecandidate, MemberId) => {
+			io.to(MemberId).emit("recieve-icecandidate", icecandidate);
+		});
+		socket.on("webrtc-offer", (offer, recieverId) => {
+			io.to(recieverId).emit("recieve-webrtcoffer", offer);
+		});
+		socket.on("webrtc-answer", (answer, recieverId) => {
+			io.to(recieverId).emit("recieve-webrtcanswer", answer);
+		});
 	});
 
 	// Handle SDP offer from client

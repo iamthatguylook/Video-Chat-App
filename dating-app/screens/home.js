@@ -77,8 +77,18 @@ export default function HomeScreen() {
 						setIsCountryFocus(false);
 					}}
 				/>
-				<TouchableOpacity className="bg-[#FF4550] mx-20 p-[12px] mt-24 rounded-xl" onPress={() => navigation.navigate("loadingScreen")}>
+				<TouchableOpacity
+					className="bg-[#FF4550] mx-20 p-[12px] mt-24 rounded-xl"
+					onPress={function () {
+						navigation.navigate("loadingScreen");
+						global.room = country;
+					}}
+				>
 					<Text className="text-black ml-4 text-xl font-extrabold">Find Someone</Text>
+					<Text>
+						{" "}
+						{gender} {country}
+					</Text>
 				</TouchableOpacity>
 			</View>
 			<View className=" mt-20 p-8"></View>
