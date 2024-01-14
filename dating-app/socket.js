@@ -1,10 +1,12 @@
 import io from "socket.io-client";
+import {SERVER_URL} from "@env"
 
-const socket = io("");
+console.log(SERVER_URL)
+const socket = io(SERVER_URL);
 
-try {
-    if(){
+// try {
+//     if(){
 
-    }
-} catch (error) {}
+//     }
+// } catch (error) {}
 export default socket;
