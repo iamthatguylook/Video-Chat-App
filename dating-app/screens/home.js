@@ -4,6 +4,8 @@ import { StyleSheet, Platform, StatusBar, SafeAreaView, TouchableOpacity, Alert 
 import { useNavigation } from "@react-navigation/native";
 import { useState, useCallback } from "react";
 import { Dropdown } from "react-native-element-dropdown";
+import JoinRoom from "../socket"
+
 export default function HomeScreen() {
 	const [country, setCountry] = useState(null);
 	const [gender, setGender] = useState(null);
@@ -81,7 +83,9 @@ export default function HomeScreen() {
 					className="bg-[#FF4550] mx-20 p-[12px] mt-24 rounded-xl"
 					onPress={function () {
 						navigation.navigate("loadingScreen");
-						global.room = country;
+						countrySelected = country;
+						genderSelected = gender;
+						JoinRoom(gender,country)
 					}}
 				>
 					<Text className="text-black ml-4 text-xl font-extrabold">Find Someone</Text>
