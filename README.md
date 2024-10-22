@@ -5,6 +5,6 @@ The app is a social platform that facilitates spontaneous video interactions, al
 
 ReactNative, TailwindCss, NodeJS
 
-# Prototype 
+# App Layout
 
 ![image](https://github.com/user-attachments/assets/329bf829-64d7-4a7f-a9fa-2526578d3c2d)
